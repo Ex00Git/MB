@@ -30,17 +30,9 @@ basic.forever(function on_forever() {
     
     if (tinkercademy.crashSensor()) {
         lcd_text = lcd_text.slice(0, -1)
-        // lcd_text = "" + lcd_text + "."
+        lcd_text = lcd_text
         I2C_LCD1602.ShowString(lcd_text, 0, 0)
-    }
-    
-    // led.plot(2, 2)
-    // basic.pause(2000)
-    // led.unplot(2, 2)
-    if (input.buttonIsPressed(Button.A)) {
-        pins.digitalWritePin(DigitalPin.P14, 1)
-    } else {
-        pins.digitalWritePin(DigitalPin.P14, 0)
+        led.plot(2, 2)
     }
     
 })
